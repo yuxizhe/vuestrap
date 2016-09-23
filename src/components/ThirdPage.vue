@@ -1,10 +1,10 @@
 <template>
-    <form class="page-footer" v-on:submit.prevent="addUser">
-        <input v-model="newUser.name">
-        <input class="message-input" v-model="newUser.message">
-        <input type="submit" value="发送">
+    <form class="form-inline navbar-fixed-bottom" role="form" v-on:submit.prevent="addUser">
+        <input class="form-control" width="10%" v-model="newUser.name">
+        <input class="form-control" placeholder="请输入内容" v-model="newUser.message">
+        <input class="btn btn-primary" type="submit" value="发送">
     </form>
-    <table class="table table-hover">
+    <table id="page3-content" class="table table-hover message-table">
         <thead>
             <tr>
                 <th width="15%">人物</th>
@@ -95,4 +95,15 @@ export default {
 }
 </script>
 <style>
+.message-table {
+    margin-bottom: 40px
+}
+
+@media (max-width: 768px) {
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+}
 </style>
