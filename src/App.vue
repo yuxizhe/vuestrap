@@ -9,10 +9,19 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
+                                <a v-link="{path: '/3'}">聊天室</a>
+                            </li>
+                            <li>
                                 <a v-link="{path: '/movie'}">电影</a>
                             </li>
                             <li>
                                 <a v-link="{path: '/smzdm'}">值得买</a>
+                            </li>
+                            <li>
+                                <a v-link="{path: '/2'}">菜谱</a>
+                            </li>
+                            <li>
+                                <a v-link="{path: '/blog'}">博客</a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right ">

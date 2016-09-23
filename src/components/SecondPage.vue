@@ -1,14 +1,19 @@
 <template>
-    <div class="card-collect">
-        <div class="card-cook" v-for="question in cook" @click="jump(question)">
-            <img class="img2" src="http://tnfs.tngou.net/image{{question.img}}">
-            <div class="text">
-                {{question.name}}
-                <br> {{question.keywords}}
+    <div class="row">
+        <div v-for="question in cook" class="col-sm-6 col-md-3" @click="jump(question)">
+            <div class=" thumbnail ">
+                <img class="img2 " src="http://tnfs.tngou.net/image{{question.img}} ">
+                <div class="caption ">
+                    <h3>{{question.name}}</h3>
+                    <p>{{question.keywords}}</p>
+                    <p>
+                        <a class="btn btn-primary " role="button " @click="jump(question)">
+                        详细
+                    </a>
+                    </p>
+                </div>
             </div>
-            <!-- <a :href="'/#!/cook/' + question.id">详细</a> -->
         </div>
-    </div>
     </div>
 </template>
 <script>
@@ -45,57 +50,4 @@ export default {
 
 }
 </script>
-<style>
-@media (max-width: 700px) {
-    .img2 {
-        margin: 10px;
-        width: 3.5rem;
-        height: 3rem
-    }
-    .text {
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        margin-top: -22px;
-        margin-left: 10px;
-        font-size: 0.4rem
-    }
-    .card {
-        position: relative;
-        margin: 0.2rem;
-        background: white;
-        /*box-shadow: 0 2px 4px hsla(165, 9%, 74%, .95);*/
-    }
-}
-
-@media (min-width: 700px) {
-    .card-collect {
-        /*display: flex;*/
-        /*flex-wrap: wrap;*/
-        /*width: 800px;*/
-    }
-    .card-cook .img2 {
-        margin: 5px 0.25rem;
-        width: 3.5rem;
-        height: 3rem;
-    }
-    .card-cook .text {
-        text-align: center;
-    }
-    .card-cook {
-        /*flex: 1;*/
-        display: inline-block;
-        position: relative;
-        width: 4rem;
-        color: #1b315e;
-        /*border: 2px solid #d3d7d4;*/
-        margin: 5px;
-        /*width: 300px;*/
-        /*display: block;*/
-        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-        border-radius: 4px;
-        /*overflow: hidden;*/
-        /*background-color: #fff;*/
-    }
-}
 </style>

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import App from './App'
 
 
-import FirstPage from './components/FirstPage.vue'
+// import FirstPage from './components/FirstPage.vue'
 import SecondPage from './components/SecondPage.vue'
 import ThirdPage from './components/ThirdPage.vue'
 import CookDetailPage from './components/CookDetailPage.vue'
@@ -12,7 +12,7 @@ import BlogPageDetail from './components/BlogPageDetail.vue'
 import Movie from './components/Movie.vue'
 import MoviePageDetail from "./components/MoviePageDetail.vue"
 import SMZDM from './components/SMZDM.vue'
-import strap from './components/strap.vue'
+// import strap from './components/strap.vue'
 
 Vue.config.debug = true;
 
@@ -21,9 +21,6 @@ Vue.use(Router)
 var router = new Router({})
 
 router.map({
-    '/1': {
-        component: FirstPage
-    },
     '/2': {
         component: SecondPage
     },
@@ -47,9 +44,6 @@ router.map({
     },
     '/smzdm': {
         component: SMZDM
-    },
-    '/strap': {
-        component: strap
     }
 })
 

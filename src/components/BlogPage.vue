@@ -12,16 +12,25 @@
             </button>
         </form>
         <div>
-            <div v-for="blog in blogs">
-                <div class="card blog-card">
-                    <div class="date">{{blog.time}}</div>
-                    <a class="title" :href="'/#!/blog/' + blog.key">{{blog.title}}</a>
-                    <div class="author">{{blog.author}}</div>
-                    <div @click="likes(blog)" class="like">喜欢{{blog.likes}}</div>
-                    <div @click="removePost(blog)" class="delete">删除X</div>
-                </div>
-                <div v-show="blog.showw">{{blog.blog}}</div>
-            </div>
+            <table class="table table-hover">
+                <thead>
+                    <th>日期</th>
+                    <th>标题</th>
+                    <th>作者</th>
+                    <th>赞</th>
+                    <th>删除</th>
+                </thead>
+                <tbody v-for="blog in blogs">
+                    <tr>
+                        <td width="10%">{{blog.time}}</td>
+                        <td width="60%" :href="'/#!/blog/' + blog.key">{{blog.title}}</td>
+                        <td>{{blog.author}}</td>
+                        <td @click="likes(blog)" class="like">{{blog.likes}}</td>
+                        <td @click="removePost(blog)" class="delete">X</td>
+                        <!-- <td>{{user.message}}</td> -->
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>
@@ -95,60 +104,4 @@ export default {
 }
 </script>
 <style>
-@media (max-width: 700px) {
-    .blog-card {
-        font-size: 0.3rem;
-        height: 0.3rem;
-        display: flex;
-        text-align: center;
-    }
-    .blog-card div {
-        flex: 1;
-    }
-    .blog-card .date {
-        flex: 2
-    }
-    .blog-card .title {
-        flex: 7;
-        text-align: left;
-    }
-    .blog-card .content {
-        display: block;
-    }
-}
-
-@media (min-width: 700px) {
-    .blog-card {
-        font-size: 0.3rem;
-        /*height: 0.8rem;*/
-        line-height: 0.8rem;
-        display: flex;
-        width: 800px;
-        margin: 0.2rem;
-    }
-    .blog-card .title {
-        flex: 5;
-        text-align: left;
-    }
-    .blog-card div {
-        flex: 1;
-        text-align: center;
-        border-radius: 10px;
-    }
-    .blog-card .like:hover {
-        background: #90d7ec;
-        /*border-radius: 10px;*/
-        border: 1px solid #e7e7e7;
-        cursor: pointer;
-    }
-    .blog-card .delete:hover {
-        background: #c85d44;
-        /*border-radius: 10px;*/
-        border: 1px solid #e7e7e7;
-        cursor: pointer;
-    }
-    .blog-card a {
-        color: #1b315e;
-    }
-}
 </style>
