@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 import App from './App'
 
 
@@ -16,9 +16,9 @@ import SMZDM from './components/SMZDM.vue'
 
 Vue.config.debug = true;
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-var router = new Router({})
+var router = new VueRouter({})
 
 router.map({
     '/2': {
